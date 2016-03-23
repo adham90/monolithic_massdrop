@@ -1,0 +1,27 @@
+h1 Listing locks
+
+table
+  thead
+    tr
+      th Required joins
+      th Drop to
+      th Unlocked
+      th Drop
+      th
+      th
+      th
+
+  tbody
+    - @locks.each do |lock|
+      tr
+        td = lock.required_joins
+        td = lock.drop_to
+        td = lock.unlocked
+        td = lock.drop
+        td = link_to 'Show', lock
+        td = link_to 'Edit', edit_lock_path(lock)
+        td = link_to 'Destroy', lock, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Lock', new_lock_path

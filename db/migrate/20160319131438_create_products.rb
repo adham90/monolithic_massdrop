@@ -5,6 +5,7 @@ class CreateProducts < ActiveRecord::Migration
       t.text :description
       t.decimal :msrp
 
+      t.references :community, index: true, foreign_key: true
       t.timestamps null: false
     end
   end

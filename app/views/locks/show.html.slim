@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Required joins:
+  = @lock.required_joins
+p
+  strong Drop to:
+  = @lock.drop_to
+p
+  strong Unlocked:
+  = @lock.unlocked
+p
+  strong Drop:
+  = @lock.drop
+
+= link_to 'Edit', edit_lock_path(@lock)
+'|
+= link_to 'Back', locks_path
