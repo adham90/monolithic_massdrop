@@ -26,6 +26,6 @@ class Drop < ActiveRecord::Base
   private
 
   def commit_to_join
-    drop_members.update_all(type: true)
+    drop_members.update_all(type: :join)
   end
 end
