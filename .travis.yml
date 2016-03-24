@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+  - 2.0.0
+  - 1.9.3
+  - jruby-19mode
+  - rbx-2
+
+addons:
+  postgresql: "9.4"
+
+before_script:
+  - psql -c 'create database monolithic_massdrop_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
