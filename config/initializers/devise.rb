@@ -11,5 +11,6 @@ Devise.setup do |config|
   config.password_length = 8..72
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
-  config.secret_key = Rails.application.secrets.devise_secret
+  config.secret_key = Rails.application.secrets.devise_secret if Rails.env.production?
+  config.secret_key = ENV["devise_secret"] if Rails.env.production?
 end
